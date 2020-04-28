@@ -29,5 +29,5 @@ def objs_counter():
                "users": "User"}
     classes_dic = {}
     for item, val in classes.items():
-        classes[item] = storage.count(eval(val))
+        classes_dic[item] = storage.count(eval(val))
     return jsonify(classes_dic)
