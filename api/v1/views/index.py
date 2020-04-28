@@ -21,8 +21,13 @@ def status():
 @app_views.route("/stats")
 def objs_counter():
     """return total count of each obj per class"""
-    classes = ["Amenity", "City", "Place", "Review", "State", "User"]
+    classes = {"amenities": "Amenity", 
+               "cities": "City",
+               "places": "Place",
+               "reviews": "Review",
+               "states": "State",
+               "users": "User"}
     classes_dic = {}
-    for i in classes:
-        classes_dic[i] = storage.count(eval(i))
+    for item, val in classes.items():
+        classes[item] = storage.count(eval(val))
     return jsonify(classes_dic)
