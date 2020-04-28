@@ -10,6 +10,7 @@ def status():
     """ return status """
     return jsonify({"status": "OK"})
 
+
 @app_views.route("/stats")
 def objs_counter():
     """return total count of each obj per class"""
