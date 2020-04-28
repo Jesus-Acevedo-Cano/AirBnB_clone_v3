@@ -21,7 +21,7 @@ def status():
 @app_views.route("/stats", strict_slashes=False)
 def objs_counter():
     """return total count of each obj per class"""
-    classes = {"amenities": "Amenity", 
+    classes = {"amenities": "Amenity",
                "cities": "City",
                "places": "Place",
                "reviews": "Review",
