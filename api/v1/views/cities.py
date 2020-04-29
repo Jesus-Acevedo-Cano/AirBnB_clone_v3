@@ -39,7 +39,6 @@ def to_get_city(city_id=None):
     """
     city_obj = storage.get(City, city_id)
     if city_obj is None:
-        """abort if the id is not present"""
         abort(404)
     city_obj = city_obj.to_dict()
     return jsonify(city_obj)
@@ -52,7 +51,6 @@ def to_delete_city(city_id=None):
     """
     city_obj = storage.get(City, city_id)
     if city_obj is None:
-        """abort if the id is not present"""
         abort(404)
 
     storage.delete(city_obj)
@@ -90,14 +88,11 @@ def to_update_city(city_id=None):
     """
     city = storage.get(City, city_id)
     if city is None:
-        """abort if the id is not present"""
         abort(404)
 
     new_data = request.get_json()
-
     if new_data is None:
         return jsonify({"error": "Not a JSON"}), 400
-
     for key, value in new_data.items():
         if key not in ["id", "state_id", "updated_at", "created_at"]:
             setattr(city, key, value)
