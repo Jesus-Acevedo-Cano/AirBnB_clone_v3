@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-New view for State objects that handles all default RestFul API actions
+New view for Amenities objects that handles all default RestFul API actions
 """
 from api.v1.views import app_views
 from models import storage
