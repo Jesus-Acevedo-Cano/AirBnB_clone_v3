@@ -16,7 +16,7 @@ def to_get_all_users():
     list of all users
     """
     users = storage.all(User)
-    users_dic = [val.to_dict() for key, val in data.items()]
+    users_dic = [val.to_dict() for key, val in users.items()]
     return jsonify(users_dic)
 
 
